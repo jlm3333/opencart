@@ -1,5 +1,8 @@
 <?php
 // Text
+$_['text_error']				= 'Error';
+$_['text_management']			= 'Management';
+
 $_['text_api']                  = 'API';
 $_['text_attribute']            = 'Attributes';
 $_['text_attribute_group']      = 'Attribute Groups';
@@ -30,7 +33,8 @@ $_['text_language_editor']      = 'Language Editor';
 $_['text_layout']               = 'Layouts';
 $_['text_localisation']         = 'Localisation';
 $_['text_location']             = 'Store Location';
-$_['text_contact']              = 'Mail';
+$_['text_contact']             	= 'Mail';
+$_['text_management']			= 'Management'; //NEW
 $_['text_marketing']            = 'Marketing';
 $_['text_marketplace']          = 'Marketplace';
 $_['text_maintenance']          = 'Maintenance';

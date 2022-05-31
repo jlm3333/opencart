@@ -15,7 +15,7 @@ class ControllerCommonColumnLeft extends Controller {
 				'href'     => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'], true),
 				'children' => array()
 			);
-
+			
 			// Catalog
 			$catalog = array();
 
@@ -380,6 +380,27 @@ class ControllerCommonColumnLeft extends Controller {
 				);
 			}
 
+			//Management Page
+			$management = array();
+
+			if ($this->user->hasPermission('access', 'management/error')) {
+				$management[] = array(
+					'name'	   => $this->language->get('text_error'),
+					'href'     => $this->url->link('management/error', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()
+				);
+			}
+			
+			if ($management) {
+				$data['menus'][] = array(
+					'id'       => 'menu-catalog',
+					'icon'	   => 'fa-empire',
+					'name'	   => $this->language->get('text_management'),
+					'href'     => '',
+					'children' => $management
+				);
+			}
+
 			// System
 			$system = array();
 
@@ -706,6 +727,7 @@ class ControllerCommonColumnLeft extends Controller {
 			} else {
 				$data['statistics_status'] = false;
 			}
+			
 
 			return $this->load->view('common/column_left', $data);
 		}
